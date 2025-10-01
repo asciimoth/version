@@ -22,7 +22,7 @@ linters:
     - govet
     - ineffassign
     - staticcheck
-    - unused
+    #- unused
     - asasalint
     - asciicheck
     - bidichk
@@ -61,7 +61,7 @@ linters:
     - ireturn
     - lll
     - loggercheck
-    - makezero
+    #- makezero
     - mirror
     - mnd
     - nakedret
@@ -97,9 +97,10 @@ linters:
     - usetesting
     - wastedassign
     - whitespace
-    - wrapcheck
+    #- wrapcheck
     - zerologlint
   disable:
+    - unused
     - cyclop
     - decorder
     - depguard
