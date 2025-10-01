@@ -8,8 +8,8 @@ schema = 3
     version = "v0.1.0"
     hash = "sha256-d3941lbbd919jM3AX8wAFhAHpgde+exxAvaxwdx5pWM="
   [mod."github.com/asciimoth/inplace"]
-    version = "v0.1.0"
-    hash = "sha256-Bf0p2pn4weEXGMueErDR+p9ainFt56VptbcfwEnOtrQ="
+    version = "v0.2.0"
+    hash = "sha256-F3oR1TyUVWMGuWXaAAg8LuU/JKX6aofXnlc6uaOZu1c="
   [mod."github.com/asciimoth/rewrite"]
     version = "v0.1.1"
     hash = "sha256-Lbg9UbCad7Ny38W3U2P5lt9337CtHM0c/VUV31szAE0="

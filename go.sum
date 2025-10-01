@@ -2,8 +2,8 @@ github.com/Masterminds/semver/v3 v3.4.0 h1:Zog+i5UMtVoCU8oKka5P7i9q9HgrJeGzI9SA1
 github.com/Masterminds/semver/v3 v3.4.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/asciimoth/colorit v0.1.0 h1:tIiW01ngdZn6bT9h8Z3rj2n/2vfewnnCWduLUH108Zc=
 github.com/asciimoth/colorit v0.1.0/go.mod h1:Xrk5LQolKWuDc5xxe78WlfUvQeBiNM7nr3m/ElqtOws=
-github.com/asciimoth/inplace v0.1.0 h1:JuzPFFmOiT8ihEgCypUZcYLN8VGX7TppX6s7Yh39V5M=
-github.com/asciimoth/inplace v0.1.0/go.mod h1:TpTif0vYY1wFbUQ/4CGUMdmR1LcpK9y7ybVKXTog92E=
+github.com/asciimoth/inplace v0.2.0 h1:b/r+1OMS6jEgvPEzYgIU0nGl/xOQKWPaCJ/RueOM0Fc=
+github.com/asciimoth/inplace v0.2.0/go.mod h1:WkHfXpUkIvsS5kMzttw0xBN8bXnT/jWQ0sjcH58LmnE=
 github.com/asciimoth/rewrite v0.1.1 h1:p6RiuvFyAgwguDcW5ky5GrmB0iRmpVEfqw/escCzLcE=
 github.com/asciimoth/rewrite v0.1.1/go.mod h1:DaUkJ5gXmbzSxbJ7ROe7Lq6NpU0ahykEiMKGqk6zXk4=
 github.com/creachadair/tomledit v0.0.29 h1:dB5CbdwJMpn/fmfAPTAAleXF/KJwY0Ggc1eL/zvZRgk=
