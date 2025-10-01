@@ -13,6 +13,9 @@ schema = 3
   [mod."github.com/creachadair/tomledit"]
     version = "v0.0.29"
     hash = "sha256-QP39Y1YMGWQSIAaD92s6LVLERgwh+5004a7U3flUTU8="
+  [mod."github.com/goccy/go-yaml"]
+    version = "v1.18.0"
+    hash = "sha256-7WH1WraWyGj7SvrOCnZkWdoGOVrQ9dkpj/zrckHq9+I="
   [mod."github.com/pelletier/go-toml"]
     version = "v1.9.5"
     hash = "sha256-RJ9K1BTId0Mled7S66iGgxHkZ5JKEIsrrNaEfM8aImc="
