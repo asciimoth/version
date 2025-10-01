@@ -1,0 +1,13 @@
+version max [item...]
+Selects and prints the maximum version among provided items. Items may be:
+  - A source name (e.g. Git, PackageJson).
+  - A literal semver (e.g. 1.2.3).
+If no items provided, prints configured DefaultVersion
+ (or "0.1.0" if not configured).
+
+Examples:
+  version max Git PackageJson 1.2.0
+  # prints default version (0.1.0 unless configured)
+  version max
+  version max 1.4.0 2.0.0 1.9.9
+

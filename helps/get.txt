@@ -1,0 +1,34 @@
+version get [--help] [--strict] [fallback-or-part] [Source...] [none]
+Fetch and compare versions from sources.
+Default behavior:
+  - Read versions from all configured sources
+    (or the built-in defaults if no config).
+  - If all non-ignored sources agree, print the version.
+  - If they disagree:
+      - In non-strict mode: print a summary to stderr and exit 2.
+      - In strict mode: treat any non-equal lower value as an error and exit 2.
+
+Usage examples:
+  version get
+  version get Git PackageJson
+  # use "1.2.3" as fallback (if no source has a value)
+  version get 1.2.3
+  # ignore all sources, use 1.2.3
+  version get 1.2.3 none
+  # print only the minor component (e.g. for 1.2.3 -> "2")
+  version get minor
+  # print patch component only, but only check Git
+  version get patch Git
+
+Arguments:
+  Source names (optional)   Names of sources to check (e.g. Git, PackageJson).
+   If omitted, all configured/default sources are used.
+  fallback-or-part (optional)
+    - literal semver "X.Y.Z" — used as fallback if no source contains a version
+    - one of "major", "minor", "patch" — print only that component.
+
+Flags:
+  -s, --strict  Treat any source that reports a lower version than the
+                maximum as an error.
+                (Useful in CI when you need strict parity.)
+

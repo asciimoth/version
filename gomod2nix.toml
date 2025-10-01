@@ -4,6 +4,9 @@ schema = 3
   [mod."github.com/Masterminds/semver/v3"]
     version = "v3.4.0"
     hash = "sha256-75kRraVwYVjYLWZvuSlts4Iu28Eh3SpiF0GHc7vCYHI="
+  [mod."github.com/asciimoth/colorit"]
+    version = "v0.1.0"
+    hash = "sha256-d3941lbbd919jM3AX8wAFhAHpgde+exxAvaxwdx5pWM="
   [mod."github.com/asciimoth/inplace"]
     version = "v0.1.0"
     hash = "sha256-Bf0p2pn4weEXGMueErDR+p9ainFt56VptbcfwEnOtrQ="
@@ -25,3 +28,9 @@ schema = 3
   [mod."github.com/tailscale/hujson"]
     version = "v0.0.0-20250605163823-992244df8c5a"
     hash = "sha256-oot7UxdkYH5Axwt0aPgbtxME5oUQkNfD4uYqIpTuYsw="
+  [mod."golang.org/x/sys"]
+    version = "v0.36.0"
+    hash = "sha256-9h4SHGnlJzmTENUp6226hC8fQ73QrQC3D85NNMxLuXg="
+  [mod."golang.org/x/term"]
+    version = "v0.35.0"
+    hash = "sha256-z3DqFKX0MJv7eloHlMwL96m5tmTFyGL1cD5Zh2ZQJpE="

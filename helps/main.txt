@@ -1,0 +1,25 @@
+version — simple multi-source project version management tool
+Usage:
+  version [global-flags]                # same as: version get
+  version <command> [args...] [sources] # run subcommand
+  version <command> --help              # show subcommand help
+
+Commands:
+  get      Fetch versions from configured sources and compare / print values
+  set      Write a specific version to configured sources
+  bump     Read, increment, write back and print new version
+  max      Choose the maximum version from provided values/sources
+
+Global flags:
+  -h, --help         Show this help and exit.
+  -s, --strict       Enable strict mode: any source reporting lower-than-max
+                     is an error.
+                     By default strict mode is disabled
+                     (allows some sources to be lower).
+
+Notes:
+  - If you run `version` without a subcommand, it behaves as `version get`.
+  - Sources are configured via version.toml or the [tool.version] table in
+    pyproject.toml.
+  - Source names are CamelCase identifiers
+    (e.g. "Git", "PackageJson", "PyProject").

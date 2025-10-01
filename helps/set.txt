@@ -1,0 +1,28 @@
+version set <version> [Source...]
+Write the given semver into configured sources.
+
+Usage:
+  version set 1.2.3
+  version set 1.2.3 PackageJson PyProject
+  version set v1.2.3 Git
+
+Behavior:
+  - For each target source:
+      - Update the file/key/regexp or write a new git tag (for git source)
+        with the new version.
+      - Respect each source's VPrefix policy:
+          - true  => force leading 'v' when writing a tag/value.
+          - false => write naked semver without 'v'.
+          - auto  => preserve existing style for that source, or
+            cahoose sensible default.
+  - If a file/source is marked read-only (either in config or via --readonly),
+    it will be skipped.
+
+Flags:
+  -s, --strict  Treat any source that reports a lower version than the
+                maximum as an error.
+
+Examples:
+  version set 2.0.0
+  version set 2.0.0 PackageJson Cargo
+  version set 2.0.0 --strict

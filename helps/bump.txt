@@ -1,0 +1,22 @@
+version bump [<major|minor|patch>|<semver>] [Source...]
+Read the current version(s), increment as requested, write back to sources, and print the new version.
+
+Default:
+  - If no increment argument given, bump the minor component (semantic default).
+  - After bumping, the new version is written to all non-read-only selected sources.
+
+Usage examples:
+  # bump minor of version fetched from sources (e.g. 1.2.3 -> 1.3.0)
+  version bump
+  version bump major   # bump major (e.g. 1.2.3 -> 2.0.0)
+  version bump patch Git # Use only git source
+  # ignore all sources, use 1.2.3 as base, print 1.3.0
+  version bump 1.2.3 none
+
+Flags:
+  -s, --strict     Fail if any selected source reports a lower-than-max value
+                   (see strict semantics).
+
+Output:
+  - Prints the newly produced version to stdout (e.g. `1.3.0`) on success.
+  - Writes diagnostic messages to stderr on partial failures.
