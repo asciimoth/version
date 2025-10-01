@@ -78,7 +78,7 @@
               stages = [ "pre-commit" ];
             };
             gomod2nix = {
-              enable = true;
+              enable = false;
               description = "Generates gomod2nix.toml";
               entry = let script = pkgs.writeShellScript "gomod2nix-hook" ''
                 gomod2nix generate
