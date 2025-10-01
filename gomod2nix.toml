@@ -10,3 +10,6 @@ schema = 3
   [mod."github.com/asciimoth/rewrite"]
     version = "v0.1.1"
     hash = "sha256-Lbg9UbCad7Ny38W3U2P5lt9337CtHM0c/VUV31szAE0="
+  [mod."github.com/pelletier/go-toml"]
+    version = "v1.9.5"
+    hash = "sha256-RJ9K1BTId0Mled7S66iGgxHkZ5JKEIsrrNaEfM8aImc="

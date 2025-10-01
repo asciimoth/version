@@ -34,7 +34,6 @@ linters:
     - dupl
     - dupword
     - durationcheck
-    - err113
     - errchkjson
     - errname
     - errorlint
@@ -64,13 +63,11 @@ linters:
     #- makezero
     - mirror
     - mnd
-    - nakedret
     - nestif
     - nilerr
     - nilnesserr
     - nilnil
     - noctx
-    - nonamedreturns
     - nosprintfhostport
     - paralleltest
     - perfsprint
