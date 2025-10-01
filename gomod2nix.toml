@@ -1,3 +1,12 @@
 schema = 3
 
 [mod]
+  [mod."github.com/Masterminds/semver/v3"]
+    version = "v3.4.0"
+    hash = "sha256-75kRraVwYVjYLWZvuSlts4Iu28Eh3SpiF0GHc7vCYHI="
+  [mod."github.com/asciimoth/inplace"]
+    version = "v0.1.0"
+    hash = "sha256-Bf0p2pn4weEXGMueErDR+p9ainFt56VptbcfwEnOtrQ="
+  [mod."github.com/asciimoth/rewrite"]
+    version = "v0.1.1"
+    hash = "sha256-Lbg9UbCad7Ny38W3U2P5lt9337CtHM0c/VUV31szAE0="

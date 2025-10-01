@@ -1,4 +1,6 @@
 [default.extend-words]
+FPR = "FPR" # Fingerprint
 importas = "importas"
 decorder = "decorder"
+
 
