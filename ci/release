@@ -62,7 +62,6 @@ function check-tools() {
     "git-cliff"
     "yq"
     "jq"
-    "ko"
   )
   for d in "${deps[@]}"; do
     if ! command -v "$d" >/dev/null 2>&1; then
