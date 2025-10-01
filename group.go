@@ -393,7 +393,7 @@ func (g *SourceGroup) Get(names []Name) (version *semver.Version, err error) {
 			return semver.NewVersion("0.1.0")
 		}
 	}
-	return semver.NewVersion(g.DefaultVersion)
+	return version, nil
 }
 
 // Return only first error.
