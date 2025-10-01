@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions:
+  contents: read #  to fetch code (actions/checkout)
+
+jobs:
+  test-pr:
+    name: Go test
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix develop --command go test ./...
+  test-push:
+    name: Go test
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix develop --command go test -v ./...
+  lint:
+    name: Golangcli-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix develop --command golangci-lint run
+  typos:
+    name: Check for typos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix develop --command typos --exclude CHANGELOG.md
+  commitizen-pr:
+    name: Lint git commits
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # ensure we check the PR branch tip rather than the auto-created merge ref
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Check all commits in PR
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          # ensure the base branch ref exists locally
+          git fetch origin "$BASE_REF":"$BASE_REF" || true
+          BASE_MERGE=$(git merge-base origin/${BASE_REF} HEAD)
+          nix develop --command cz check --rev-range "${BASE_MERGE}..HEAD"
+          # check for typos
+          nix develop --command git cliff -u > UNRELEASED_CHANGELOG
+          nix develop --command typos UNRELEASED_CHANGELOG
+  commitizen-push:
+    name: Lint git commit
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: |
+          git log -1 --pretty=%B > COMMIT
+          nix develop --command cz check --commit-msg-file COMMIT
+
