@@ -10,6 +10,15 @@ schema = 3
   [mod."github.com/asciimoth/rewrite"]
     version = "v0.1.1"
     hash = "sha256-Lbg9UbCad7Ny38W3U2P5lt9337CtHM0c/VUV31szAE0="
+  [mod."github.com/creachadair/tomledit"]
+    version = "v0.0.29"
+    hash = "sha256-QP39Y1YMGWQSIAaD92s6LVLERgwh+5004a7U3flUTU8="
   [mod."github.com/pelletier/go-toml"]
     version = "v1.9.5"
     hash = "sha256-RJ9K1BTId0Mled7S66iGgxHkZ5JKEIsrrNaEfM8aImc="
+  [mod."github.com/pelletier/go-toml/v2"]
+    version = "v2.2.4"
+    hash = "sha256-8qQIPldbsS5RO8v/FW/se3ZsAyvLzexiivzJCbGRg2Q="
+  [mod."github.com/tailscale/hujson"]
+    version = "v0.0.0-20250605163823-992244df8c5a"
+    hash = "sha256-oot7UxdkYH5Axwt0aPgbtxME5oUQkNfD4uYqIpTuYsw="
