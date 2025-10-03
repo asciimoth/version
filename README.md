@@ -33,8 +33,8 @@ nix shell github:asciimoth/version
 You can download deb/rmp packages from [releases page](https://github.com/asciimoth/version/releases/latest)
 or use my [deb/rpm repo](https://repo.moth.contact/).
 ### Arch
-Arch users can download `.pkg` files from [releases page](https://github.com/asciimoth/version/releases/latest) too.  
-AUR is on the way.
+Arch users can install [version-git](https://aur.archlinux.org/packages/version-git)
+from AUR or download `.pkg` files from [releases page](https://github.com/asciimoth/version/releases/latest) too.  
 ### Go
 You can also install it with go:
 ```sh 
